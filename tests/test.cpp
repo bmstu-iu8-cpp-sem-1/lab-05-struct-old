@@ -32,7 +32,7 @@ protected:
         Student student7 = { "Robert", "ibm3-12", Raitings4, Subjects2 };
         Student student8 = { "Vanya", "ibm3-12", Raitings5, Subjects2 };
         Student student9 = { "Uma", "ibm3-12", Raitings9, Subjects2 };
-        Student student9 = { "Inga", "ibm3-12", Raitings10, Subjects2 };
+        Student student10 = { "Inga", "ibm3-12", Raitings10, Subjects2 };
     }
 };
 // Сортировка студентов по именам
