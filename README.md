@@ -85,7 +85,7 @@ std::vector<Student> SortByName(std::vector<Student>&)
 
 Прототип:
 ```cpp
-std::vector<Student> SortByMark(std::vector<Student>&)
+std::vector<Student> SortByRating(std::vector<Student>&)
 ```
 * вернет количество студентов имеющих неудовлетворительную оценку хотя бы по одному предмету;
 
