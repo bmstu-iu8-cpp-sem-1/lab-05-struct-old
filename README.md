@@ -74,40 +74,29 @@ struct Student
 Предположим есть список студентов `std::vector<Student> students`.
 Ваше задание состоит в реализации ряда функций. Все прототипы функций необходимо разместить
 в файле header.hpp.
+
 Реазилуйте функции, которые выполяют следующие действия с этим списком:
-* отсортируют всех студентов по именам;
-
-Прототип:
+* отсортирует всех студентов по именам. Прототип:
 ```cpp
-std::vector<Student> SortByName(std::vector<Student>&)
+void SortByName(std::vector<Student>&)
 ```
-* отсортируют всех студентов по средней оценке;
-
-Прототип:
+* отсортирует всех студентов по средней оценке;
 ```cpp
-std::vector<Student> SortByRating(std::vector<Student>&)
+void SortByRating(std::vector<Student>&)
 ```
 * вернет количество студентов имеющих неудовлетворительную оценку хотя бы по одному предмету;
-
-Прототип:
 ```cpp
 size_t CountTwoness(const std::vector<Student>&)
 ```
 * определит, сколько студентов сдали все экзамены на 5.
-
-Прототип:
 ```cpp
 size_t CountExcellent(const std::vector<Student>&)
 ```
-* создадут массив `std::vector<Student>`, в который войдут студенты имеющие отметку отлично, по предмету "Math";
-
-Прототип:
+* создаст массив `std::vector<Student>`, в который войдут студенты имеющие отметку отлично, по предмету "Math";
 ```cpp
 std::vector<Student> VectorMathExcellent(const std::vector<Student>&)
 ```
 * вернет массив уникальных названий групп студентов из списка students
-
-Прототип:
 ```cpp
 std::vector<std::string> GroupsId(const std::vector<Student>&)
 ```
