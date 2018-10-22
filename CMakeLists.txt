@@ -10,8 +10,8 @@ HunterGate(
   SHA1 "3d94b8522541c4c8eaac606f4c47d09322a8019c"
 )
 
-project(template) # rename project and delete this comment
-string(APPEND CMAKE_CXX_FLAGS " -Wall -Wextra -Wno-unused-command-line-argument -Wshadow -Wnon-virtual-dtor -pedantic")
+project(struct)
+string(APPEND CMAKE_CXX_FLAGS " -Wall -Wextra -Wno-unused-command-line-argument -Wshadow -Wnon-virtual-dtor -pedantic -pthread")
 
 hunter_add_package(GTest)
 find_package(GTest CONFIG REQUIRED)
@@ -24,4 +24,4 @@ target_include_directories(tests PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 target_link_libraries(tests GTest::main)
 
 enable_testing()
-add_test(NAME unit_tests COMMAND tests) 
+add_test(NAME unit_tests COMMAND tests)
