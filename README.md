@@ -16,10 +16,10 @@
     {
         std::string Name;
         std::string LastName;
-        std::vector<int> ratings;
+        std::vector<int> Ratings;
     };
     ```
-Мы определили структуру с именем `Student`. Она содержит 3 переменные: `Name` типа `std::string`, `LastName` типа `std::string` и `ratings` типа `std::vector<int>`. Эти переменные, которые являются частью структуры, называются членами (или полями). `Student` — это просто объявленная структура, хоть мы и сообщаем компилятору, что она имеет переменные-члены, память под неё сейчас не выделяется. Имена структур принято писать с большой буквы, чтобы отличать их от имен переменных.
+Мы определили структуру с именем `Student`. Она содержит 3 переменные: `Name` типа `std::string`, `LastName` типа `std::string` и `ratings` типа `std::vector<int>`. Эти переменные, которые являются частью структуры, называются членами (или полями). `Student` — это просто объявленная структура, хоть мы и сообщаем компилятору, что она имеет переменные-члены, память под неё сейчас не выделяется.
 **Внимание!** Одна из самых простых ошибок в C++ — забыть точку с запятой в конце объявления структуры. Это приведет к ошибке компилятора.
 * Чтобы использовать структуру `Student`, мы просто объявим переменную типа `Student`:
     ```cpp
@@ -37,7 +37,7 @@
     Student anna;
     anna.Name = "Anna";
     anna.LastName = "Ivanova";
-    anna.ratings = {4, 5, 5, 3};
+    anna.Ratings = {4, 5, 5, 3};
     ```
 * Инициализация структур путем присваивания значений каждому члену по порядку – занятие довольно громоздкое (особенно, если этих членов много), поэтому в C++ есть более быстрый способ инициализации структур — список инициализации. Он позволяет инициализировать некоторые или все члены структуры во время объявления.
     ```cpp
@@ -72,42 +72,44 @@ struct Student
 ```
 В поле `Ratings` представлены оценки по соответсвующему предмету из поля `Subjects`.
 Предположим есть список студентов `std::vector<Student> students`.
+Ваше задание состоит в реализации ряда функций. Все прототипы функций необходимо разместить
+в файле header.hpp.
 Реазилуйте функции, которые выполяют следующие действия с этим списком:
 * отсортируют всех студентов по именам;
 
 Прототип:
 ```cpp
-std::vector<Student> NameSort(std::vector<Student>&)
+std::vector<Student> SortByName(std::vector<Student>&)
 ```
 * отсортируют всех студентов по средней оценке;
 
 Прототип:
 ```cpp
-std::vector<Student> MarkSort(std::vector<Student>&)
+std::vector<Student> SortByMark(std::vector<Student>&)
 ```
 * вернет количество студентов имеющих неудовлетворительную оценку хотя бы по одному предмету;
 
 Прототип:
 ```cpp
-int CountTwoness(const std::vector<Student>)
+size_t CountTwoness(const std::vector<Student>&)
 ```
 * определит, сколько студентов сдали все экзамены на 5.
 
 Прототип:
 ```cpp
-int CountExcellent(const std::vector<Student>)
+size_t CountExcellent(const std::vector<Student>&)
 ```
 * создадут массив `std::vector<Student>`, в который войдут студенты имеющие отметку отлично, по предмету "Math";
 
 Прототип:
 ```cpp
-std::vector<Student> VectorMathExcellent(const std::vector<Student>)
+std::vector<Student> VectorMathExcellent(const std::vector<Student>&)
 ```
 * вернет массив уникальных названий групп студентов из списка students
 
 Прототип:
 ```cpp
-std::vector<std::string> VectorGroupsId(const std::vector<Student>)
+std::vector<std::string> GroupsId(const std::vector<Student>&)
 ```
 * сформирует список групп, т.е. создаст массив структур `Group`
 ```cpp
@@ -120,5 +122,5 @@ struct Group
 
 Прототип:
 ```cpp
-std::vector<Group> Groups(const std::vector<Student>)
+std::vector<Group> Groups(const std::vector<Student>&)
 ```
