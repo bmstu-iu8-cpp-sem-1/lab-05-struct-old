@@ -23,16 +23,16 @@ protected:
         { "Physics", "Russian", "Politology", "Biology", "History" };
         std::vector<std::string> Subjects3 =
         { "IT", "English", "Math", "PE", "Electronic", "IT" };
-        Student student1 = { "Asya", "iu8-34", Ratings2, Subjects1 }; //30
-        Student student2 = { "Romka", "iu8-34", Ratings6, Subjects1 }; //30
-        Student student3 = { "Petya", "iu9-54", Ratings1, Subjects3 }; //26
-        Student student4 = { "Vasya", "iu9-54", Ratings7, Subjects3 }; //23
-        Student student5 = { "Alice", "iu9-54", Ratings8, Subjects3 }; //27
-        Student student6 = { "Anton", "ibm3-12", Ratings3, Subjects2 }; //19
-        Student student7 = { "Robert", "ibm3-12", Ratings4, Subjects2 }; //25
-        Student student8 = { "Vanya", "ibm3-12", Ratings5, Subjects2 }; //27
-        Student student9 = { "Uma", "ibm3-12", Ratings9, Subjects2 }; //25
-        Student student10 = { "Inga", "ibm3-12", Ratings10, Subjects2 }; //22
+        Student student1 = { "Asya", "iu8-34", Ratings2, Subjects1 }; // 30
+        Student student2 = { "Romka", "iu8-34", Ratings6, Subjects1 }; // 30
+        Student student3 = { "Petya", "iu9-54", Ratings1, Subjects3 }; // 26
+        Student student4 = { "Vasya", "iu9-54", Ratings7, Subjects3 }; // 23
+        Student student5 = { "Alice", "iu9-54", Ratings8, Subjects3 }; // 27
+        Student student6 = { "Anton", "ibm3-12", Ratings3, Subjects2 }; // 19
+        Student student7 = { "Robert", "ibm3-12", Ratings4, Subjects2 }; // 25
+        Student student8 = { "Vanya", "ibm3-12", Ratings5, Subjects2 }; // 27
+        Student student9 = { "Uma", "ibm3-12", Ratings9, Subjects2 }; // 25
+        Student student10 = { "Inga", "ibm3-12", Ratings10, Subjects2 }; // 22
     }
 };
 // Сортировка студентов по именам
