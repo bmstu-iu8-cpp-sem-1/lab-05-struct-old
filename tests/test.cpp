@@ -7,34 +7,60 @@ class TestLab : public ::testing::Test
 {
 protected:
     void SetUp() {
-        std::vector<unsigned> Ratings1 = { 3, 5, 4, 5, 5, 4 };
-        std::vector<unsigned> Ratings2 = { 5, 5, 5, 5, 5, 5 };
-        std::vector<unsigned> Ratings3 = { 3, 3, 3, 4, 3, 3 };
-        std::vector<unsigned> Ratings4 = { 4, 4, 5, 4, 4, 4 };
-        std::vector<unsigned> Ratings5 = { 4, 4, 5, 5, 5, 4 };
-        std::vector<unsigned> Ratings6 = { 5, 5, 5, 5, 5, 5 };
-        std::vector<unsigned> Ratings7 = { 3, 5, 3, 3, 5, 4 };
-        std::vector<unsigned> Ratings8 = { 5, 4, 5, 4, 5, 4 };
-        std::vector<unsigned> Ratings9 = { 5, 2, 5, 4, 5, 4 };
-        std::vector<unsigned> Ratings10 = { 2, 2, 5, 4, 5, 4 };
-        std::vector<std::string> Subjects1 =
+        Ratings1 = { 3, 5, 4, 5, 5, 4 };
+        Ratings2 = { 5, 5, 5, 5, 5, 5 };
+        Ratings3 = { 3, 3, 3, 4, 3, 3 };
+        Ratings4 = { 4, 4, 5, 4, 4, 4 };
+        Ratings5 = { 4, 4, 5, 5, 5, 4 };
+        Ratings6 = { 5, 5, 5, 5, 5, 5 };
+        Ratings7 = { 3, 5, 3, 3, 5, 4 };
+        Ratings8 = { 5, 4, 5, 4, 5, 4 };
+        Ratings9 = { 5, 2, 5, 4, 5, 4 };
+        Ratings10 = { 2, 2, 5, 4, 5, 4 };
+        Subjects1 =
         { "Math", "Physics", "IT", "English", "Ecology", "Literature" };
-        std::vector<std::string> Subjects2 =
+        Subjects2 =
         { "Physics", "Russian", "Politology", "Biology", "History" };
-        std::vector<std::string> Subjects3 =
+        Subjects3 =
         { "IT", "English", "Math", "PE", "Electronic", "IT" };
-        Student student1 = { "Asya", "iu8-34", Ratings2, Subjects1 }; // 30
-        Student student2 = { "Romka", "iu8-34", Ratings6, Subjects1 }; // 30
-        Student student3 = { "Petya", "iu9-54", Ratings1, Subjects3 }; // 26
-        Student student4 = { "Vasya", "iu9-54", Ratings7, Subjects3 }; // 23
-        Student student5 = { "Alice", "iu9-54", Ratings8, Subjects3 }; // 27
-        Student student6 = { "Anton", "ibm3-12", Ratings3, Subjects2 }; // 19
-        Student student7 = { "Robert", "ibm3-12", Ratings4, Subjects2 }; // 25
-        Student student8 = { "Vanya", "ibm3-12", Ratings5, Subjects2 }; // 27
-        Student student9 = { "Uma", "ibm3-12", Ratings9, Subjects2 }; // 25
-        Student student10 = { "Inga", "ibm3-12", Ratings10, Subjects2 }; // 22
+        student1 = { "Asya", "iu8-34", Ratings2, Subjects1 }; // 30
+        student2 = { "Romka", "iu8-34", Ratings6, Subjects1 }; // 30
+        student3 = { "Petya", "iu9-54", Ratings1, Subjects3 }; // 26
+        student4 = { "Vasya", "iu9-54", Ratings7, Subjects3 }; // 23
+        student5 = { "Alice", "iu9-54", Ratings8, Subjects3 }; // 27
+        student6 = { "Anton", "ibm3-12", Ratings3, Subjects2 }; // 19
+        student7 = { "Robert", "ibm3-12", Ratings4, Subjects2 }; // 25
+        student8 = { "Vanya", "ibm3-12", Ratings5, Subjects2 }; // 27
+        student9 = { "Uma", "ibm3-12", Ratings9, Subjects2 }; // 25
+        student10 = { "Inga", "ibm3-12", Ratings10, Subjects2 }; // 22
     }
+
+private:
+    std::vector<unsigned> Ratings1;
+    std::vector<unsigned> Ratings2;
+    std::vector<unsigned> Ratings3;
+    std::vector<unsigned> Ratings4;
+    std::vector<unsigned> Ratings5;
+    std::vector<unsigned> Ratings6;
+    std::vector<unsigned> Ratings7;
+    std::vector<unsigned> Ratings8;
+    std::vector<unsigned> Ratings9;
+    std::vector<unsigned> Ratings10;
+    std::vector<std::string> Subjects1;
+    std::vector<std::string> Subjects2;
+    std::vector<std::string> Subjects3;
+    Student student1;
+    Student student2;
+    Student student3;
+    Student student4;
+    Student student5;
+    Student student6;
+    Student student7;
+    Student student8;    
+    Student student9;
+    Student student10;
 };
+
 // Сортировка студентов по именам
 TEST_F(TestLab, SortByName) {
     // базовый сценарий
@@ -62,6 +88,7 @@ TEST_F(TestLab, SortByName) {
     SortByName(students);
     EXPECT_EQ(students, result);
 }
+
 // Сортировка всех студентов по средней оценке
 TEST_F(TestLab, SortByRating) {
     // базовый сценарий
@@ -89,6 +116,7 @@ TEST_F(TestLab, SortByRating) {
     SortByRating(students);
     EXPECT_EQ(students, result);
 }
+
 // Возвращаем количество двоечников
 TEST_F(TestLab, CountTwoness) {
     // базовый сценарий
@@ -114,6 +142,7 @@ TEST_F(TestLab, CountTwoness) {
     count = CountTwoness(students);
     EXPECT_EQ(0, count);
 }
+
 // Количество отличников
 TEST_F(TestLab, CountExcellent) {
     // базовый сценарий
@@ -139,6 +168,7 @@ TEST_F(TestLab, CountExcellent) {
     count = CountExcellent(students);
     EXPECT_EQ(0, count);
 }
+
 // Создаем массив тех, кто получил по математике 5
 TEST_F(TestLab, VectorMathExcellent) {
     // базовый сценарий
@@ -170,6 +200,7 @@ TEST_F(TestLab, VectorMathExcellent) {
     students = VectorMathExcellent(students);
     EXPECT_EQ(students, result);
 }
+
 // Массив уникальных названий групп
 TEST_F(TestLab, GroupsId) {
     // базовый сценарий
@@ -195,6 +226,7 @@ TEST_F(TestLab, GroupsId) {
     groups = GroupsId(students);
     EXPECT_EQ(result, groups);
 }
+
 // массив структур Group
 TEST_F(TestLab, Groups) {
     // базовый сценарий
