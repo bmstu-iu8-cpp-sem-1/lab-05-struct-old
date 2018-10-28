@@ -3,6 +3,21 @@
 #include <gtest/gtest.h>
 
 #include <header.hpp>
+
+bool operator==(const Student& a, const Student& b)
+{
+    return a.Name == b.Name &&
+        a.GroupId == b.GroupId &&
+        a.Subjects == b.Subjects &&
+        a.Rating == b.Rating;
+}
+
+bool operator==(const Group& a, const Group& b)
+{
+    return a.Id == b.Id &&
+        a.Students == b.Students;
+}
+
 class TestLab : public ::testing::Test
 {
 protected:
@@ -35,7 +50,7 @@ protected:
         student10 = { "Inga", "ibm3-12", Ratings10, Subjects2 }; // 22
     }
 
-private:
+public:
     std::vector<unsigned> Ratings1;
     std::vector<unsigned> Ratings2;
     std::vector<unsigned> Ratings3;
@@ -56,7 +71,7 @@ private:
     Student student5;
     Student student6;
     Student student7;
-    Student student8;    
+    Student student8;
     Student student9;
     Student student10;
 };
@@ -68,8 +83,8 @@ TEST_F(TestLab, SortByName) {
     { student1, student2, student3, student4,
     student5, student6, student7, student8 };
     std::vector<Student> result =
-    { student5, student6, student1, student8,
-    student4, student3, student7, student2 };
+    { student5, student6, student1, student3, 
+    student7, student2, student8, student4, };
     SortByName(students);
     EXPECT_EQ(students, result);
     // пустой вектор
@@ -138,7 +153,6 @@ TEST_F(TestLab, CountTwoness) {
     EXPECT_EQ(1, count);
     // пустой вектор
     students = { };
-    result = { };
     count = CountTwoness(students);
     EXPECT_EQ(0, count);
 }
@@ -164,7 +178,6 @@ TEST_F(TestLab, CountExcellent) {
     EXPECT_EQ(1, count);
     // пустой вектор
     students = { };
-    result = { };
     count = CountExcellent(students);
     EXPECT_EQ(0, count);
 }
@@ -241,25 +254,25 @@ TEST_F(TestLab, Groups) {
     Group group2 = { "iu9-54", students2group };
     Group group3 = { "ibm3-12", students3group };
     std::vector<Group> result = { group1, group2, group3 };
-    std::vector<Group> groups = VectorGroups(students);
+    std::vector<Group> groups = Groups(students);
     EXPECT_EQ(result, groups);
     // все из одной группы
     students = { student3, student4, student5 };
     students2group = { student3, student4, student5 };
     group2 = { "iu9-54", students2group };
     result = { group2 };
-    groups = VectorGroups(students);
+    groups = Groups(students);
     EXPECT_EQ(result, groups);
     // вектор с одним элементом
     students = { student1 };
     students1group = { student1 };
     group1 = { "iu8-34", students1group };
     result = { group1 };
-    groups = VectorGroups(students);
+    groups = Groups(students);
     EXPECT_EQ(result, groups);
     // пустой вектор
     students = { };
     result = { };
-    groups = VectorGroups(students);
+    groups = Groups(students);
     EXPECT_EQ(result, groups);
 }
