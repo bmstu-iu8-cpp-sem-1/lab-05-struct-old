@@ -9,7 +9,7 @@ bool operator==(const Student& a, const Student& b)
     return a.Name == b.Name &&
         a.GroupId == b.GroupId &&
         a.Subjects == b.Subjects &&
-        a.Rating == b.Rating;
+        a.Ratings == b.Ratings;
 }
 
 bool operator==(const Group& a, const Group& b)
@@ -22,6 +22,7 @@ class TestLab : public ::testing::Test
 {
 protected:
     void SetUp() {
+    // TODO add empty ratings
         Ratings1 = { 3, 5, 4, 5, 5, 4 };
         Ratings2 = { 5, 5, 5, 5, 5, 5 };
         Ratings3 = { 3, 3, 3, 4, 3, 3 };
